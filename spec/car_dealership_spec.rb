@@ -43,7 +43,11 @@ describe(Dealership) do
   end
 
   describe('.clear') do
-
+    it("will clear the array holding dealerships") do
+      test_dealership = Dealership.new("Bob's Used Cars")
+      test_dealership.save()
+      expect(Dealership.clear()).to(eq([]))
+    end
   end
 
   describe('.find') do
