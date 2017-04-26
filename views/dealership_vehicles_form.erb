@@ -1,0 +1,18 @@
+<h1>Add a vehicle to <%= @dealership.name() %> </h1>
+
+<form action="/vehicles" method="post">
+  <input id='dealership_id' name='dealership_id' type='hidden' value='<%= @dealership.id() %>'>
+
+  <label for='make'>Vehicle's make:</label>
+  <input id='make' name='make' type='text'>
+
+  <label for='model'>Vehicle's model:</label>
+  <input id='model' name='model' type='text'>
+
+  <label for='year'>Vehicle's year:</label>
+  <input id='year' name='year' type='text'>
+
+  <button type="submit">Add Vehicle</button>
+</form>
+
+<!-- We see a new line in our form here. <input id='dealership_id' name='dealership_id' type='hidden' value='<%= @dealership.id() %>'> will add a dealership_id to the new Vehicle object. We set the type attribute to 'hidden' so that this input doesn't show up in the form itself. This dealership_id will allow us to find the correct dealership in our app.rb file when we want to save the new instance of Vehicle to the dealership. -->
