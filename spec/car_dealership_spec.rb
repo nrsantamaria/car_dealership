@@ -51,6 +51,12 @@ describe(Dealership) do
   end
 
   describe('.find') do
-
+    it("will find the id of the dealership object in the dealership class") do
+      test_dealership = Dealership.new("Bob's Used Cars")
+      test_dealership.save()
+      perferred_dealership = Dealership.new("E&J's on 82nd")
+      perferred_dealership.save()
+      expect(Dealership.find(1)).to(eq(test_dealership))
+    end
   end
 end

@@ -30,4 +30,14 @@ class Dealership
   define_singleton_method(:clear) do
     @@dealerships = []
   end
+
+  define_singleton_method(:find) do |identity|
+    dealership_id = nil
+    @@dealerships.each do |dealership|
+      if dealership.id().eql?(identity.to_i())
+        dealership_id = dealership
+      end
+    end
+    dealership_id
+  end
 end
